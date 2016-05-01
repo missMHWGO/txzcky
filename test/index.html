@@ -1,0 +1,142 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1">
+    <meta name="msapplication-tap-highlight" content="no" />
+    <link rel="stylesheet" href="images/style.css?v=2">
+    <title>html5 图片上传 -访问手机相册</title>
+</head>
+
+<body>
+    <!--加载资源-->
+    <div class="lazy_tip" id="lazy_tip"><span>1%</span>
+        <br> 载入中......</div>
+    <div class="lazy_cover"></div>
+    <div class="resource_lazy hide"></div>
+    <div class="pic_edit">
+        <h2 style="color:#4eaf7a;">双指旋转和双指缩放</h2>
+        <div id="clipArea"></div>
+        <button id="upload2">选择图片</button>
+        <button id="clipBtn">上传图片</button>
+        <input type="file" id="file" style="opacity: 0;position: fixed;bottom: -100px">
+        <div id="plan" style="display:none">比例剪切后尺寸
+            <canvas id="myCanvas"></canvas>
+            <h2 onClick="Close();" style="cursor:pointer; display:inline-block">关闭</h2></div>
+    </div>
+    <img src="" fileName="" id="hit" style="display:none;z-index: 9">
+    <div id="cover"></div>
+    <script src="images/jquery-2.1.0.min.js"></script>
+    <script src="images/sonic.js"></script>
+    <script src="images/comm.js"></script>
+    <script src="images/hammer.js"></script>
+    <script src="images/iscroll-zoom.js"></script>
+    <script src="images/jquery.photoClip.js?v=1"></script>
+    <script>
+    var hammer = '';
+    var currentIndex = 0;
+    var body_width = $('body').width();
+    var body_height = $('body').height();
+
+    $("#clipArea").photoClip({
+        width: body_width * 0.8125,
+        height: body_width * 0.8125,
+        file: "#file",
+        view: "#hit",
+        ok: "#clipBtn",
+        loadStart: function() {
+            //console.log("照片读取中");
+            $('.lazy_tip span').text('');
+            $('.lazy_cover,.lazy_tip').show();
+        },
+        loadComplete: function() {
+            //console.log("照片读取完成");
+            $('.lazy_cover,.lazy_tip').hide();
+        },
+        clipFinish: function(dataURL) {
+            $('#hit').attr('src', dataURL);
+            saveImageInfo();
+        }
+    });
+
+    //图片上传
+    function saveImageInfo() {
+        var filename = $('#hit').attr('fileName');
+        var img_data = $('#hit').attr('src');
+        if (img_data == "") {
+            alert('null');
+        }
+        //alert(filename+'|'+img_data);
+        render(img_data);
+
+        $.post("", {
+            image: img_data
+        }, function(data) {
+            if (data != '') {
+                //			console.info(data);
+                //data 为返回文件名；
+                alert('提交成功');
+            }
+        });
+    }
+
+    /*获取文件拓展名*/
+    function getFileExt(str) {
+        var d = /\.[^\.]+$/.exec(str);
+        return d;
+    }
+
+    //图片上传结束
+    $(function() {
+        $('#upload2').on('click', function() {
+            //图片上传按钮
+            $('#file').click();
+        });
+    })
+
+
+    function Close() {
+        $('#plan').hide();
+    }
+
+    // 渲染 Image 缩放尺寸  
+    function render(src) {
+        var MAX_HEIGHT = 256; //Image 缩放尺寸 
+        // 创建一个 Image 对象  
+        var image = new Image();
+
+        // 绑定 load 事件处理器，加载完成后执行  
+        image.onload = function() {
+            // 获取 canvas DOM 对象  
+            var canvas = document.getElementById("myCanvas");
+            // 如果高度超标  
+            if (image.height > MAX_HEIGHT) {
+                // 宽度等比例缩放 *=  
+                image.width *= MAX_HEIGHT / image.height;
+                image.height = MAX_HEIGHT;
+            }
+            // 获取 canvas的 2d 环境对象,  
+            // 可以理解Context是管理员，canvas是房子  
+            var ctx = canvas.getContext("2d");
+            // canvas清屏  
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            canvas.width = image.width; // 重置canvas宽高  
+            canvas.height = image.height;
+            // 将图像绘制到canvas上  
+            ctx.drawImage(image, 0, 0, image.width, image.height);
+            // !!! 注意，image 没有加入到 dom之中  
+
+            var dataurl = canvas.toDataURL("image/png");
+            var imagedata = encodeURIComponent(dataurl);
+            $('#plan').attr('data-src', dataurl);
+            $('#plan').show();
+        };
+        // 设置src属性，浏览器会自动加载。  
+        // 记住必须先绑定render()事件，才能设置src属性，否则会出同步问题。  
+        image.src = src;
+    };
+    </script>
+</body>
+
+</html>

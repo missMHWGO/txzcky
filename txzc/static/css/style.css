@@ -1,0 +1,190 @@
+html,
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    position: fixed;
+}
+
+@font-face {
+    font-family: PingFang_Bold;
+    src: url(../font/PingFang_Bold.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: YGYDF;
+    src: url(../font/YGYDF.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: SSZH;
+    src: url(../font/SSZH.TTF) format('truetype');
+}
+
+#bg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: url('../img/background.png') -20px -10px no-repeat;
+    background-size: 108% 108%;
+    /*padding: 0.65rem 0.59rem 2.96rem 0.59rem;*/
+}
+
+#photo {
+    /*width: 100%;*/
+    /*height: 100%;*/
+    /*border: solid #ff0000;*/
+    /*margin: 0;*/
+    /*padding: 0;*/
+    /*display: block;*/
+    position: absolute;
+    top: 0.65rem;
+    left: 0.6rem;
+}
+
+.zc {
+    font-family: YGYDF;
+    font-size: 1.3rem;
+    letter-spacing: 0.33rem;
+    padding-left: 1rem;
+    padding-top: 0;
+    padding-bottom: 0;
+    /*font-weight: 900;*/
+    color: #fff;
+    /*margin-bottom: 0.09rem;*/
+    background-color: transparent;
+    border: 0 solid transparent;
+    outline: none;
+    /*line-height: 1.7rem;
+    height: 1.7rem;*/
+}
+
+.profile {
+    font-family: SSZH;
+    font-size: 0.8rem;
+    letter-spacing: 0.1rem;
+    padding-left: 1rem;
+    padding-top: 0;
+    padding-bottom: 0;
+    /*font-weight: 900;*/
+    color: #f4ba15;
+    /*margin-bottom: 0.09rem;*/
+    background-color: transparent;
+    border: 0 solid transparent;
+    outline: none;
+    /*line-height: 1.7rem;
+    height: 1.7rem;*/
+    width: 100%;
+}
+
+.zc::-webkit-input-placeholder {
+        color: #ffffff;
+        font-family: YGYDF;
+    	font-size: 1.3rem;
+        letter-spacing: 0.3rem;       
+    }
+
+.profile::-webkit-input-placeholder {
+        color: #f4ba15;
+        font-family: SSZH;
+        font-size: 0.8rem;
+        letter-spacing: 0.1rem;
+    }
+
+#text {
+    position: absolute;
+    bottom: 7.1rem;
+    left: 0;
+    /*display: none;*/
+}
+
+.bottombar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    height: 2.96rem;
+    width: 100%;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.bottombar li {
+    display: inline-block;
+    width: 33.33%;
+    height: 100%;
+}
+
+.bottombar li span {
+    display: inline-block;
+    height: 2.96rem;
+    line-height: 2.96rem;
+    font-size: 0.62rem;
+    /*padding-left: 0.4rem;*/
+    color: #ffffff;
+}
+
+.bottombar li img {
+    position: relative;
+    top: 0.15rem;
+    width: 0.74rem;
+    height: 0.74rem;
+    /*margin-top: 1rem;*/
+    margin-left: 1.5rem;
+}
+
+#sharebg{
+	position: absolute;
+    top:0;
+    width: 100%;
+    height: 100%;
+    background: url('../img/light.png') no-repeat;
+    background-size: 100% 100%;
+    display: none;
+}
+
+#sharetext{
+    width: 100%;
+	margin-top: 80%;
+    margin-left: 26%;
+	color: #ffffff;
+	font-size: 0.63rem;
+	position: absolute;
+    top:0;
+	/*text-align: center;*/
+	font-weight: bold;
+	display: none;
+}
+
+#clipArea,#clipBtn,#view,#file,#download{
+    display: none;
+}
+
+#clipArea{
+    /*position: absolute;*/
+    width: 100%;
+    height: 90%;
+    z-index: 9;
+}
+#clipBtn{
+    position: absolute;
+    width: 6rem;
+    height: 2rem;
+    z-index: 9;
+    margin-top: 0.5rem;
+    margin-left: 5rem;
+    background-color: gray;
+    border: 0;
+    padding: 0;
+}
+
+#clipBtn p{
+    font-family: SimHei;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #f4ba15;
+    width: 6rem;
+    height: 2rem;
+    line-height: 2rem;
+    margin:0;
+}

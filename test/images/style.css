@@ -1,0 +1,28 @@
+/*上下切换*/
+html, body {margin: 0;padding: 0;height: 100%;width: 100%;background: #FFFFFF;font: 13px/1.5em 'Open Sans', Helvetica, Arial, sans-serif;text-align: center;}
+.hide {display: none;}
+.show {display: block;}
+.pic_edit {position: fixed;top: 0;left: 0;width: 100%;height: 100%;z-index: 100;background:#e9e9e9; opacity:.8}
+#clipArea {margin: 0 auto;height: 300px;background:#f2f2f2;}
+#clipBtn{margin-top: 5px;background-color: rgb(221, 39, 39);color: #fff;padding: 8px 20px;border-radius: 5px;width: 40%;}
+#upload2{margin-top: 5px;background-color: rgb(221, 39, 39);color: #fff;padding: 8px 20px;border-radius: 5px;width: 40%;margin-left: 3%;}
+
+#hit {position: fixed;top: 19%;left: 9.375%;background: gainsboro;}
+.logo {position: absolute;bottom: 12%;z-index: 100;width: 46%;left: 27%;}
+
+/*适应小屏*/
+@media screen and (max-height: 450px) {
+.show_labour .show_img {width: 75%;margin-top: 22%;}
+.show_labour .show5 {width: 80%;left: 10%;margin-top: 22%;}
+.show_labour .show5_btn {width: 62%;}
+#clipBtn, #upload2 {margin-top: 0px;padding: 5px 20px;}
+}
+.lazy_tip{position: absolute;margin-top: 35%;z-index: 1001;font-size: 25px;width: 100%;color: #4eaf7a;line-height: 30px;}
+.lazy_cover {width: 100%;height: 100%;background-color: black;z-index: 1000;color: #4eaf7a;font-size: 25px;opacity: 0.7;position: fixed;top: 0;left: 0;}
+#plan{ position:absolute;top:0;left:0; width:100%; clear:both; height:100%;display: none;
+background: rgb(255, 255, 255);
+vertical-align: baseline;
+text-align: center;
+line-height: 1.5;
+padding-top: 25%;}
+#plan canvas{clear:both;}
