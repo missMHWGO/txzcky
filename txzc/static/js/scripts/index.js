@@ -35,7 +35,6 @@
         ctx.textBaseline = 'bottom';
 
         ctx.fillText('2016年', 7.49 * rem, 0.53 * em);
-        alert(2);
 
         var image_logo = new Image();
         image_logo.src = 'static/img/logo.png';
