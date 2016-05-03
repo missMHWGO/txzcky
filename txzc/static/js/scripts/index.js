@@ -34,7 +34,7 @@
         ctx.font = '0.33' * rem + 'px' + ' 宋体';
         ctx.textBaseline = 'bottom';
 
-        ctx.fillText('2016年', 7.49 * rem, 0.53 * em);
+        ctx.fillText('2016年', 7.46 * rem, 0.53 * em);
 
         var image_logo = new Image();
         image_logo.src = 'static/img/logo.png';
@@ -268,7 +268,7 @@
                         ctx.font = '0.33' * rem + 'px' + ' 宋体';
                         ctx.textBaseline = 'bottom';
 
-                        ctx.fillText('2016年', 7.49 * rem, 0.53 * em);
+                        ctx.fillText('2016年', 7.46 * rem, 0.53 * em);
 
                         var image_logo = new Image();
                         image_logo.src = 'static/img/logo.png';
