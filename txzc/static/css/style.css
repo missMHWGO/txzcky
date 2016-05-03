@@ -45,16 +45,17 @@ body {
 .zc {
     font-family: YGYDF;
     font-size: 1.3rem;
-    letter-spacing: 0.33rem;
+    letter-spacing: 0.3rem;
     padding-left: 1rem;
-    padding-top: 0;
-    padding-bottom: 0;
-    /*font-weight: 900;*/
     color: #fff;
+    display: inline;
+    /*padding-top: 0;
+    padding-bottom: 0;*/
+    /*font-weight: 900;*/
     /*margin-bottom: 0.09rem;*/
-    background-color: transparent;
+    /*background-color: transparent;
     border: 0 solid transparent;
-    outline: none;
+    outline: none;*/
     /*line-height: 1.7rem;
     height: 1.7rem;*/
 }
@@ -77,12 +78,12 @@ body {
     width: 100%;
 }
 
-.zc::-webkit-input-placeholder {
+/*.zc::-webkit-input-placeholder {
         color: #ffffff;
         font-family: YGYDF;
     	font-size: 1.3rem;
         letter-spacing: 0.3rem;       
-    }
+    }*/
 
 .profile::-webkit-input-placeholder {
         color: #f4ba15;

@@ -7,7 +7,7 @@
     canvas.width = win.innerWidth;
     canvas.height = win.innerHeight;
 
-    // var say;
+    var say;
 
     var image_nopic = new Image();
     image_nopic.src = 'static/img/nopic.png';
@@ -47,16 +47,16 @@
             ctx.drawImage(this, 0.4 * rem, 1.6 * rem, 15.4 * rem, 3 * rem);
         }
 
-        // var saying = new Array("哈哈", "呵呵", "呀呀", "嘿嘿", "啦啦", "奔跑吧，创业者！", "哦哦", "噢噢");
-        // var index = Math.floor(saying.length * Math.random());
-        // say = saying[index];
-        // $.get('static/font/access.php?lang="SSZH"').done(function() {
-        //     setTimeout(function() {
-        //         ctx.font = '0.6' * rem + 'px' + ' SSZH';
-        //         ctx.fillText(say, 0.5 * rem, 13.6 * em);
-        //     }, 500);
+        var saying = new Array("创业不仅仅是一场简单的游戏", "不怕万人阻挡，只怕自己投降", "一群人拼尽全力才有的辉煌", "很多人只是围观少数人的奇迹", "创业者是值得自豪的少数派", "勇于再造超乎想象的自己", "能不能不重要，想不想才重要", "坚持下去根本不需要理由","我们拓展了旁观者的想象力","我们正在改变触手可及的世界");
+        var index = Math.floor(saying.length * Math.random());
+        say = saying[index];
+        $.get('static/font/access.php?lang="SSZH"').done(function() {
+            setTimeout(function() {
+                ctx.font = '0.6' * rem + 'px' + ' SSZH';
+                ctx.fillText(say, 0.5 * rem, 13.6 * em);
+            }, 500);
 
-        // });
+        });
 
         var image_code = new Image();
         image_code.src = 'static/img/code.png';
@@ -121,15 +121,11 @@
                 ctx.fillStyle = '#fff';
                 ctx.textBaseline = 'bottom';
 
-                var zc = $(".zc")[0];
+                var zc = $(".zc");
                 $.get('static/font/access.php?lang="YGYDF"').done(function() {
                     setTimeout(function() {
                         ctx.font = '1.35' * rem + 'px' + ' YGYDF';
-                        if (zc.value == "") {
-                            zc.value = "请输入主题内容";
-                        }
-                        ctx.fillText(zc.value.split("").join(" "), 0.41 * rem, 12 * em);
-
+                        ctx.fillText(zc.html().split("").join(" "), 0.41 * rem, 12 * em);
                         ctx.fillStyle = '#f4ba15'; //f4ba15
                         var profile = $(".profile")[0];
                         $.get('static/font/access.php?lang="SSZH"').done(function() {
@@ -281,8 +277,8 @@
                             ctx.drawImage(this, 0.4 * rem, 1.6 * rem, 15.4 * rem, 3 * rem);
                         }
 
-                        // ctx.font = '0.6' * rem + 'px' + ' SSZH';
-                        // ctx.fillText(say, 0.5 * rem, 13.6 * em);
+                        ctx.font = '0.6' * rem + 'px' + ' SSZH';
+                        ctx.fillText(say, 0.5 * rem, 13.6 * em);
 
                         var image_code = new Image();
                         image_code.src = 'static/img/code.png';
