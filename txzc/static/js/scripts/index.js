@@ -12,13 +12,13 @@
     var image_nopic = new Image();
     image_nopic.src = 'static/img/nopic.png';
     image_nopic.onload = function() {
-        ctx.drawImage(this, 0, 0, canvas.width, canvas.height);
+        ctx.drawImage(this, 0, 0, canvas.width + 3, canvas.height + 3);
 
         ctx.strokeStyle = '#fff';
         ctx.beginPath();
-        ctx.moveTo(0, 0.62 * rem);
+        ctx.moveTo(0.02 * rem, 0.62 * rem);
         ctx.lineTo(7 * rem, 0.62 * rem);
-        ctx.moveTo(0, 0.74 * rem);
+        ctx.moveTo(0.02 * rem, 0.74 * rem);
         ctx.lineTo(7 * rem, 0.74 * rem);
         ctx.moveTo(8.93 * rem, 0.62 * rem);
         ctx.lineTo(16 * rem, 0.62 * rem);
@@ -302,18 +302,18 @@
                     }
                 }
             });
-            
+
             var canvas_height_len = canvas.style.height.length;
 
             $("#click").css({
                 'width': canvas.style.width,
-                'height': parseInt(canvas.style.height.substring(0,canvas_height_len-2)) * 0.7 + 'px',
+                'height': parseInt(canvas.style.height.substring(0, canvas_height_len - 2)) * 0.7 + 'px',
                 'margin-left': '0.6' * rem + 'px',
                 'margin-top': '0.65' * rem + 'px',
                 'display': 'block',
                 'position': 'absolute'
             });
-            
+
 
             $("#click")[0].onclick = function() {
                 $("#file").click();
