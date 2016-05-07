@@ -16,9 +16,9 @@
 
         ctx.strokeStyle = '#fff';
         ctx.beginPath();
-        ctx.moveTo(0.02 * rem, 0.62 * rem);
+        ctx.moveTo(0.04 * rem, 0.62 * rem);
         ctx.lineTo(7 * rem, 0.62 * rem);
-        ctx.moveTo(0.02 * rem, 0.74 * rem);
+        ctx.moveTo(0.04 * rem, 0.74 * rem);
         ctx.lineTo(7 * rem, 0.74 * rem);
         ctx.moveTo(8.93 * rem, 0.62 * rem);
         ctx.lineTo(16 * rem, 0.62 * rem);
@@ -40,7 +40,7 @@
         var image_txlogo = new Image();
         image_txlogo.src = 'static/img/txlogo.png';
         image_txlogo.onload = function() {
-            ctx.drawImage(this, 0.4 * rem, 1.6 * rem, 15.4 * rem, 3 * rem);
+            ctx.drawImage(this, 0.35 * rem, 1.6 * rem, 15.4 * rem, 3 * rem);
         }
         var image_person = new Image();
         image_person.src = 'static/img/person.png';
@@ -249,9 +249,9 @@
 
                             ctx.strokeStyle = '#fff';
                             ctx.beginPath();
-                            ctx.moveTo(0, 0.62 * rem);
+                            ctx.moveTo(0.04 * rem, 0.62 * rem);
                             ctx.lineTo(7 * rem, 0.62 * rem);
-                            ctx.moveTo(0, 0.74 * rem);
+                            ctx.moveTo(0.04 * rem, 0.74 * rem);
                             ctx.lineTo(7 * rem, 0.74 * rem);
                             ctx.moveTo(8.93 * rem, 0.62 * rem);
                             ctx.lineTo(16 * rem, 0.62 * rem);
@@ -273,7 +273,7 @@
                             var image_txlogo = new Image();
                             image_txlogo.src = 'static/img/txlogo.png';
                             image_txlogo.onload = function() {
-                                ctx.drawImage(this, 0.4 * rem, 1.6 * rem, 15.4 * rem, 3 * rem);
+                                ctx.drawImage(this, 0.35 * rem, 1.6 * rem, 15.4 * rem, 3 * rem);
                             }
                             var image_person = new Image();
                             image_person.src = 'static/img/person.png';
@@ -314,9 +314,9 @@
                 'position': 'absolute'
             });
 
-
             $("#click")[0].onclick = function() {
                 $("#file").click();
+                setTimeout('document.getElementsByClassName("profile")[0].focus();',500);
 
                 $('#file').change(function(e) {
                     var file = e.target.files[0],
