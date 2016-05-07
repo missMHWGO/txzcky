@@ -316,7 +316,6 @@
 
             $("#click")[0].onclick = function() {
                 $("#file").click();
-                setTimeout('document.getElementsByClassName("profile")[0].focus();',500);
 
                 $('#file').change(function(e) {
                     var file = e.target.files[0],
