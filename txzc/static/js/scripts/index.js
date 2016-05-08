@@ -87,6 +87,8 @@
         },
         bind: function() {
             $('#takePhoto')[0].onclick = function() {
+                ga('send', 'event', 'startBtn', 'clickStartMake');
+
                 $("#file").click();
 
                 $('#file').change(function(e) {
@@ -103,6 +105,8 @@
             }
 
             $('#save')[0].onclick = function() {
+                ga('send', 'event', 'saveBtn', 'clickSave');
+
                 var opts = {
                     lines: 13 // The number of lines to draw
                         ,
@@ -188,6 +192,8 @@
             }
 
             $('#share')[0].onclick = function() {
+                ga('send', 'event', 'shareBtn', 'clickShare');
+
                 $('#sharebg')[0].style.display = 'block';
                 $('#sharetext')[0].style.display = 'block';
 

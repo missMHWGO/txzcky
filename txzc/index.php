@@ -1,6 +1,6 @@
 <?php
 require_once "jssdk.php";
-$jssdk = new JSSDK("wx475b1829f02db10d", "50c7fc15b189ce1dda371c7286f6baf5");
+$jssdk = new JSSDK("wx25ab7e4b32ebdbee", "ba7d7476b9bf9305a8ce31e3050e17ef");
 $signPackage = $jssdk->GetSignPackage();
 ?>
     <!DOCTYPE html>
@@ -10,6 +10,15 @@ $signPackage = $jssdk->GetSignPackage();
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1">
         <title>腾讯众创空间（武汉）</title>
+        <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+        ga('create', 'UA-77429264-1', 'auto');
+        ga('send', 'pageview');
+    </script>
+
     </head>
 
     <body>
@@ -57,7 +66,7 @@ $signPackage = $jssdk->GetSignPackage();
         <script src="static/js/lib/jquery.photoClip.min.js"></script>
         <script>
         wx.config({
-            debug: false,
+            debug: true,
             appId: '<?php echo $signPackage["appId"];?>',
             timestamp: '<?php echo $signPackage["timestamp"];?>',
             nonceStr: '<?php echo $signPackage["nonceStr"];?>',
@@ -87,7 +96,7 @@ $signPackage = $jssdk->GetSignPackage();
 
                 //分享给好友
                 wx.onMenuShareAppMessage({
-                    title: title, // 分享标题
+                    title: '腾讯众创空间（武汉）', // 分享标题
                     desc: desc, // 分享描述
                     link: link, // 分享链接
                     imgUrl: imgUrl, // 分享图标
