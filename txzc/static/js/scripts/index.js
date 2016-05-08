@@ -190,6 +190,7 @@
             $('#share')[0].onclick = function() {
                 $('#sharebg')[0].style.display = 'block';
                 $('#sharetext')[0].style.display = 'block';
+
             }
 
             $('#sharebg')[0].onclick = function() {
