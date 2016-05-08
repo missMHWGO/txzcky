@@ -1,6 +1,6 @@
 <?php
 require_once "jssdk.php";
-$jssdk = new JSSDK("wx25ab7e4b32ebdbee", "ba7d7476b9bf9305a8ce31e3050e17ef");
+$jssdk = new JSSDK("wx1cb78b78e62f759d", "f77111bfdc5dbeb7f1e38819e255536a");
 $signPackage = $jssdk->GetSignPackage();
 ?>
     <!DOCTYPE html>
@@ -66,7 +66,7 @@ $signPackage = $jssdk->GetSignPackage();
         <script src="static/js/lib/jquery.photoClip.min.js"></script>
         <script>
         wx.config({
-            debug: true,
+            debug: false,
             appId: '<?php echo $signPackage["appId"];?>',
             timestamp: '<?php echo $signPackage["timestamp"];?>',
             nonceStr: '<?php echo $signPackage["nonceStr"];?>',
